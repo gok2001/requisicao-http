@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import DepartmentList from './assets/components/DepartmentList';
-import DepartmentForm from './assets/components/DepartmentForm';
+import DepartmentList from './components/DepartmentList';
+import DepartmentForm from './components/DepartmentForm';
 
 const url = "http://localhost:3000/departments";
 
