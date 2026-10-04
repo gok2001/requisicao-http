@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DepartmentList from './components/DepartmentList';
 import DepartmentForm from './components/DepartmentForm';
+import { useFetch } from './hooks/useFetch';
 
 const url = "http://localhost:3000/departments";
 
@@ -9,26 +10,11 @@ function App() {
   const [name, setName] = useState("");
   const [acronym, setAcronym] = useState("");
 
-  const [departments, setDepartments] = useState([]);
-
-  const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
 
   const [error, setError] = useState({});
 
-  useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-
-      const res = await fetch(url);
-      const data = await res.json();
-
-      setDepartments(data);
-      setLoading(false);
-    }
-
-    fetchData();
-  }, []);
+  const { data: departments, setData: setDepartments, loading } = useFetch(url);
 
   async function handleSubmit(e) {
     e.preventDefault();
