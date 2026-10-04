@@ -58,6 +58,8 @@ function App() {
 
     if (acronym.length < 2 || acronym.length > 5) {
       error.acronym = "Sigla deve ter de 2 a 5 caracteres";
+    } else if (departments.some(department => department.acronym === acronym)) {
+      error.acronym = "Sigla não pode ser repetida";
     }
 
     setError(error);
