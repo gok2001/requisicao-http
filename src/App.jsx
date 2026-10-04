@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import DepartmentList from './assets/components/DepartmentList';
 
 function App() {
-  const url = "localhost:3000/departments";
+  const url = "http://localhost:3000/departments";
 
   const [name, setName] = useState("");
   const [acronym, setAcronym] = useState("");
