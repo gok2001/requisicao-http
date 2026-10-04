@@ -86,6 +86,7 @@ function App() {
         setName={setName}
         acronym={acronym}
         setAcronym={setAcronym}
+        sending={sending}
         handleSubmit={handleSubmit}
         error={error}
       />

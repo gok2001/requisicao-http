@@ -3,6 +3,7 @@ export default function DepartmentForm({
     setName,
     acronym,
     setAcronym,
+    sending,
     handleSubmit,
     error
 }) {
@@ -31,7 +32,9 @@ export default function DepartmentForm({
                 {error.acronym}
             </div>
 
-            <button type="submit">Cadastrar</button>
+            <button type="submit" disabled={sending}>
+                {sending ? "Enviando..." : "Cadastrar"}
+            </button>
         </form>
     );
 }

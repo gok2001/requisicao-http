@@ -1,6 +1,30 @@
 {
-    "departments": [
-        { "id": 1, "name": "Recursos Humanos", "acronym": "RH" },
-        { "id": 2, "name": "Tecnologia da Informação", "acronym": "TI" }
-    ]
+  "departments": [
+    {
+      "id": "1",
+      "name": "Recursos Humanos",
+      "acronym": "RH"
+    },
+    {
+      "id": "2",
+      "name": "Tecnologia da Informação",
+      "acronym": "TI"
+    },
+    {
+      "name": "Financeiro",
+      "acronym": "FI",
+      "id": "Yxx7vKC3YNY"
+    },
+    {
+      "name": "Manutenção",
+      "acronym": "MAN",
+      "id": "9iOEk9wZIU0"
+    },
+    {
+      "name": "Marketing",
+      "acronym": "MKT",
+      "id": "k03T2dDK1ag"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
