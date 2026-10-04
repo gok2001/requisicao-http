@@ -93,6 +93,7 @@ function App() {
 
       <DepartmentList
         departments={departments}
+        loading={loading}
       />
     </div>
   );
