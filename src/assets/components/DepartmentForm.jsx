@@ -2,10 +2,12 @@ export default function DepartmentForm({
     name,
     setName,
     acronym,
-    setAcronym
+    setAcronym,
+    handleSubmit,
+    error
 }) {
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h2>Cadastrar novo Departamento</h2>
 
             <label htmlFor="name">Nome do Departamento</label>

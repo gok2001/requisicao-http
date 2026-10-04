@@ -28,7 +28,33 @@ function App() {
     fetchData();
   }, [url]);
 
-  function validade() {
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setSending(true);
+
+    const error = validate();
+
+    if (Object.keys(error).length > 0) {
+      return;
+    }
+
+    setDepartments(
+      ...departments,
+      {
+        "id": 1,
+        "name": name,
+        "acronym": acronym
+      }
+    );
+
+    setName("");
+    setAcronym("");
+
+    setSending(false);
+  }
+
+  function validate() {
     const error = {};
 
     if (acronym.length < 2 || acronym.length > 5) {
