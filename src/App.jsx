@@ -32,13 +32,13 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    setSending(true);
-
     const error = validate();
 
     if (Object.keys(error).length > 0) {
       return;
     }
+
+    setSending(true);
 
     setDepartments(
       ...departments,
