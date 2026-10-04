@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import DepartmentList from './assets/components/DepartmentList';
 import DepartmentForm from './assets/components/DepartmentForm';
 
+const url = "http://localhost:3000/departments";
+
 function App() {
-  const url = "http://localhost:3000/departments";
 
   const [name, setName] = useState("");
   const [acronym, setAcronym] = useState("");
@@ -29,7 +30,7 @@ function App() {
     fetchData();
   }, []);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const error = validate();
@@ -40,14 +41,25 @@ function App() {
 
     setSending(true);
 
-    setDepartments(
-      ...departments,
+    const department = {
+      name,
+      acronym
+    }
+
+    const res = await fetch(
+      url,
       {
-        "id": 1,
-        "name": name,
-        "acronym": acronym
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(department)
       }
     );
+
+    const addedDepartment = await res.json();
+
+    setDepartments((prev) => [...prev, addedDepartment]);
 
     setName("");
     setAcronym("");
