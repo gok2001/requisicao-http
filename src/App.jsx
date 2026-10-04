@@ -26,7 +26,7 @@ function App() {
     }
 
     fetchData();
-  }, [url]);
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
