@@ -10,7 +10,7 @@ export default function DepartmentForm({
     return (
         <form
             onSubmit={handleSubmit}
-            className="cart p-4 shadow-sm mb-4"
+            className="card p-4 shadow-sm mb-4"
         >
             <h2 className="mb-4">Cadastrar novo Departamento</h2>
 

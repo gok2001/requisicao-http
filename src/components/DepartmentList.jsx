@@ -21,7 +21,7 @@ export default function DepartmentList({
                         ?
                             <tr>
                                 <td colSpan="2" className="text-center">
-                                    "Carregando departamentos..."
+                                    Carregando departamentos...
                                 </td>
                             </tr>
                         :
