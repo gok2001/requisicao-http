@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import DepartmentList from './assets/components/DepartmentList';
+import DepartmentForm from './assets/components/DepartmentForm';
 
 function App() {
   const url = "http://localhost:3000/departments";
@@ -68,6 +69,15 @@ function App() {
 
   return (
     <div>
+      <DepartmentForm
+        name={name}
+        setName={setName}
+        acronym={acronym}
+        setAcronym={setAcronym}
+        handleSubmit={handleSubmit}
+        error={error}
+      />
+
       <DepartmentList
         departments={departments}
       />

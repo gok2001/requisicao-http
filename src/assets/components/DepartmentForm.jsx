@@ -27,6 +27,9 @@ export default function DepartmentForm({
                 value={acronym}
                 onChange={(e) => setAcronym(e.target.value)}
             />
+            <div>
+                {error.acronym}
+            </div>
 
             <button type="submit">Cadastrar</button>
         </form>
