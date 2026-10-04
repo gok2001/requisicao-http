@@ -1,4 +1,7 @@
-export default function DepartmentList({ departments }) {
+export default function DepartmentList({
+    departments,
+    loading
+}) {
     return (
         <div>
             <div>
@@ -16,12 +19,17 @@ export default function DepartmentList({ departments }) {
                     </thead>
 
                     <tbody>
-                        {departments.map((department) => (
-                            <tr key={department.id}>
-                                <td>{department.name}</td>
-                                <td>{department.acronym}</td>
-                            </tr>
-                        ))}
+                        {loading
+                        ?
+                            "Carregando departamentos..."
+                        :
+                            departments.map((department) => (
+                                <tr key={department.id}>
+                                    <td>{department.name}</td>
+                                    <td>{department.acronym}</td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
 
                 </table>
