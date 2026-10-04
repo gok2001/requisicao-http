@@ -12,6 +12,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
 
+  const [error, setError] = useState({});
+
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
@@ -25,6 +27,18 @@ function App() {
 
     fetchData();
   }, [url]);
+
+  function validade() {
+    const error = {};
+
+    if (acronym.length < 2 || acronym.length > 5) {
+      error.acronym = "Sigla deve ter de 2 a 5 caracteres";
+    }
+
+    setError(error);
+
+    return error;
+  }
 
   return (
     <div>
