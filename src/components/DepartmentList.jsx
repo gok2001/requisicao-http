@@ -3,13 +3,11 @@ export default function DepartmentList({
     loading
 }) {
     return (
-        <div>
-            <div>
-                <h2>Departamentos cadastrados</h2>
-            </div>
+        <div className="card p-4 shadow-sm">
+            <h2 className="mb-4">Departamentos cadastrados</h2>
 
-            <div>
-                <table>
+            <div className="table-responsive">
+                <table className="table table-striped table-hover align-middle">
 
                     <thead>
                         <tr>
@@ -21,7 +19,11 @@ export default function DepartmentList({
                     <tbody>
                         {loading
                         ?
-                            "Carregando departamentos..."
+                            <tr>
+                                <td colSpan="2" className="text-center">
+                                    "Carregando departamentos..."
+                                </td>
+                            </tr>
                         :
                             departments.map((department) => (
                                 <tr key={department.id}>

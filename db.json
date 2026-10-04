@@ -24,6 +24,11 @@
       "name": "Marketing",
       "acronym": "MKT",
       "id": "k03T2dDK1ag"
+    },
+    {
+      "name": "Produção",
+      "acronym": "PROD",
+      "id": "7Z1i-bjjNZ4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

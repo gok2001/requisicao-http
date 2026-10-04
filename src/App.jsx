@@ -80,7 +80,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container py-5">
       <DepartmentForm
         name={name}
         setName={setName}
