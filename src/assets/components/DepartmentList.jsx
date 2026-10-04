@@ -16,14 +16,14 @@ export default function DepartmentList({ departments }) {
                     </thead>
 
                     <tbody>
-                        {departments.map((department, index) => (
-                            <tr key={index}>
+                        {departments.map((department) => (
+                            <tr key={department.id}>
                                 <td>{department.name}</td>
                                 <td>{department.acronym}</td>
                             </tr>
                         ))}
                     </tbody>
-                    
+
                 </table>
             </div>
         </div>
